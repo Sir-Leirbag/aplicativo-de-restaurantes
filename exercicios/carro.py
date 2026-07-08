@@ -9,6 +9,9 @@ class Carro:
     def listar_carros():
         for carro in Carro.carros:
             print(f'{carro.modelo} | {carro.cor} | {carro.ano}')
+    
+    def __str__(self):
+        return f'{self.modelo} | {self.cor} | {self.ano}'
 
 carro1 = Carro('Volkswagen Gol GTi', 'Azul Mônaco', 1989)
 
@@ -20,4 +23,4 @@ carro4 = Carro('Renault Twingo', 'Verde Jade', 1994)
 
 carro5 = Carro('Fiat Bravo Wolverine', 'Branco Kalahari' , 2014)
 
-Carro.listar_carros()
+print(carro1)

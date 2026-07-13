@@ -12,5 +12,6 @@ Restaurante.alternar_estado(restaurante_japones)
 Restaurante.listar_restaurantes()
 
 
+
 if __name__ == '__main__':
     main()

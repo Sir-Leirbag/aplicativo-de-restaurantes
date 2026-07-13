@@ -30,3 +30,12 @@ class Restaurante:
     def receber_avaliacao(self, cliente, nota):
         avaliacao = avaliacao(cliente, nota)
         self._avaliacao.append(avaliacao)
+    
+    @property
+    def media_avaliacoes(self):
+        if not self._avaliacao:
+            return 0
+        soma_das_avaliacoes = sum(avaliacao._nota for avaliacao in self._avaliacao)
+        quantidade_de_notas = len(self._avaliacao)
+        media = round(soma_das_avaliacoes / quantidade_de_notas, 1)
+        return media

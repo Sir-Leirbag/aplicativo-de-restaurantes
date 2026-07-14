@@ -15,10 +15,11 @@ class Restaurante:
     def __str__(self):
         return f'{self.nome} | {self.categoria}'
 
-    def listar_restaurantes():
-        print(f'{'Nome do restaurante'.ljust(25)} | {'Categoria'.ljust(25)} | {'Status'}')
+    @classmethod
+    def listar_restaurantes(cls):
+        print(f'{'Nome do restaurante'.ljust(25)} | {'Categoria'.ljust(25)} | {'Status'.ljust(25)} | {'Avaliação'}')
         for restaurante in Restaurante.restaurantes:
-            print(f'{restaurante.nome.ljust(25)} | {restaurante.categoria.ljust(25)} | {restaurante.ativo.ljust(25)}')
+            print(f'{restaurante.nome.ljust(25)} | {restaurante.categoria.ljust(25)} | {restaurante.ativo.ljust(25)} | {restaurante.media_avaliacoes}')
 
     @property
     def ativo(self):
@@ -28,9 +29,9 @@ class Restaurante:
         self._ativo = not self._ativo
 
     def receber_avaliacao(self, cliente, nota):
-        avaliacao = avaliacao(cliente, nota)
+        avaliacao = Avaliacao(cliente, nota)
         self._avaliacao.append(avaliacao)
-    
+
     @property
     def media_avaliacoes(self):
         if not self._avaliacao:

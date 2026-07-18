@@ -1,42 +1,15 @@
-# class Livro:
-#     def __init__(self, titulo, autor, paginas):
-#         self.titulo = titulo
-#         self.autor = autor
-#         self.paginas = paginas
+class Livro:
+    def __init__(self, titulo, autor, ano_publicacao):
+        self._titulo = titulo
+        self._autor = autor
+        self._ano_publicacao = ano_publicacao
+        self._disponivel = True
 
-#     def __str__(self):
-#         return f'{self.titulo} por {self.autor} - {self.paginas} páginas.'
-        
-#     @property
-#     def titulo_autor(self):
-#         return f'{self.titulo} por {self.autor}'
-    
-#     def aumentar_paginas(self):
-#         self.paginas += quantidade
-
-class Pessoa:
-
-    def __init__(self, nome, idade, profissao):
-        self.nome = nome
-        self.idade = idade
-        self.profissao = profissao
-    
     def __str__(self):
-        return f'nome: {self.nome} | idade: {self.idade} anos | profissão: {self.profissao}'
-    
-    @property
-    def saudacao(self):
-        if self.profissao:
-            return f'Olá, sou {self.nome}, trabalho com {self.profissao}.'
-        else:
-            return f'Olá, sou {self.nome}.'
-    
-    def aniverario(self):
-        self.idade += 1
+        return f'{self._titulo} | {self._autor} | {self._ano_publicacao}'
 
-pessoa1 = Pessoa('Gabriel', 23, 'bancário')
+livro1 = Livro('Entendendo Algoritmos', 'Aditya Y. Bhargava', 2017)
+livro2 = Livro('Curso Intensivo de Python', 'Eric Matthes', 2016)
 
-
-pessoa1.aniverario()
-print(pessoa1)
-print(pessoa1.saudacao)
+print(livro1)
+print(livro2)

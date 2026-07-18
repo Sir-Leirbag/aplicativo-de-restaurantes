@@ -20,7 +20,6 @@ class Pessoa:
 
 pessoa1 = Pessoa('Gabriel', 23, 'bancário')
 
-
 pessoa1.aniverario()
 print(pessoa1)
 print(pessoa1.saudacao)

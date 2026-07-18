@@ -6,10 +6,15 @@ class Livro:
         self._disponivel = True
 
     def __str__(self):
-        return f'{self._titulo} | {self._autor} | {self._ano_publicacao}'
+        return f'{self._titulo} | {self._autor} | {self._ano_publicacao} | disponível: {self._disponivel}'
+    
+    def emprestar(self):
+        self._disponivel = False
 
 livro1 = Livro('Entendendo Algoritmos', 'Aditya Y. Bhargava', 2017)
 livro2 = Livro('Curso Intensivo de Python', 'Eric Matthes', 2016)
+
+livro1.emprestar()
 
 print(livro1)
 print(livro2)

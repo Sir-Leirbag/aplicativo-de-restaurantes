@@ -15,8 +15,7 @@ class Livro:
     def emprestar(self):
         self._disponivel = False
 
-    @classmethod
-    def verificar_disponibilidade(cls):
+    def verificar_disponibilidade():
         ano = int(input('Digite o ano que deseja: '))
         print('Livros disponívies:')
         for livro in Livro.livros:
